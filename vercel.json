@@ -1,0 +1,13 @@
+{
+  "version": 2,
+
+  "buildCommand": "pnpm install && pnpm --filter canvas-client build",
+
+  "outputDirectory": "client/dist",
+
+  "framework": null,
+
+  "env": {
+    "NODE_VERSION": "20"
+  }
+}
