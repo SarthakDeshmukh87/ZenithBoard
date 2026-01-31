@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hocuspocus/provider": "^3.4.4",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "yjs": "^13.6.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.8",
