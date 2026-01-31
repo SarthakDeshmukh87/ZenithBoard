@@ -1,15 +1,16 @@
-const { Hocuspocus } = require('@hocuspocus/server');
+const { Server } = require('@hocuspocus/server');
 
-const server = new Hocuspocus({
-  // Use Render's port
+const server = new Server({
+  // Port configuration for Render
   port: process.env.PORT ? parseInt(process.env.PORT) : 1234,
-  address: '0.0.0.0',
   
-  // Add a simple check to see if it's working
-  onListen() {
-    console.log('✅ ZenithBoard Sync Server is live!');
+  // Important: Bind to 0.0.0.0 for external access on Render
+  address: '0.0.0.0',
+
+  async onListen(data) {
+    console.log(`🚀 ZenithBoard Sync Server is live on port ${data.port}`);
   },
 });
 
-// Use the instance method correctly
+// Start the server
 server.listen();
