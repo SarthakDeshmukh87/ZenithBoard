@@ -1,9 +1,10 @@
 {
-  "name": "zenith-server",
+  "name": "zenith-board-server",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "@hocuspocus/server": "^3.4.3"
