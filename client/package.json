@@ -1,14 +1,19 @@
 {
-  "name": "zenithboard-root",
+  "name": "canvas-client",
   "private": true,
-
-  "packageManager": "pnpm@9.15.4",
-
-  "engines": {
-    "node": "20.x"
-  },
-
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "pnpm --filter canvas-client build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3"
   }
 }
