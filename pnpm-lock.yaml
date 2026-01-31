@@ -26,12 +26,18 @@ importers:
 
   client:
     dependencies:
+      '@hocuspocus/provider':
+        specifier: ^3.4.4
+        version: 3.4.4(y-protocols@1.0.7(yjs@13.6.29))(yjs@13.6.29)
       react:
         specifier: ^19.2.3
         version: 19.2.4
       react-dom:
         specifier: ^19.2.3
         version: 19.2.4(react@19.2.4)
+      yjs:
+        specifier: ^13.6.0
+        version: 13.6.29
     devDependencies:
       '@types/react':
         specifier: ^19.2.8
@@ -51,11 +57,20 @@ packages:
   '@hocuspocus/common@3.4.4':
     resolution: {integrity: sha512-RykIJ0tsHHMP4Xk+4UCbc7SO5LgGxGUSTdbh6anJEsaALAyqinf1Nn5HYuMjLPolAmsar1v++m9zufR09NLpXA==}
 
+  '@hocuspocus/provider@3.4.4':
+    resolution: {integrity: sha512-KbsMAfdYcIJD8eMU/5QnpXcSOvIWAcCNI33FSRSaKCIpYBFtAwkYIwWnZJmPZ8a1BMAtqQc+uvy9+UQf7GHnGQ==}
+    peerDependencies:
+      y-protocols: ^1.0.6
+      yjs: ^13.6.8
+
   '@hocuspocus/server@3.4.4':
     resolution: {integrity: sha512-UV+oaONAejOzeYgUygNcgsc8RdZvSokVvAxluZJIisLACpRO/VsseQ5lWKDRwLd7Fn6+rHWDH3hGuQ1fdX1Ycg==}
     peerDependencies:
       y-protocols: ^1.0.6
       yjs: ^13.6.8
+
+  '@lifeomic/attempt@3.1.0':
+    resolution: {integrity: sha512-QZqem4QuAnAyzfz+Gj5/+SLxqwCAw2qmt7732ZXodr6VDWGeYLG6w1i/vYLa55JQM9wRuBKLmXmiZ2P0LtE5rw==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -135,6 +150,18 @@ snapshots:
     dependencies:
       lib0: 0.2.117
 
+  '@hocuspocus/provider@3.4.4(y-protocols@1.0.7(yjs@13.6.29))(yjs@13.6.29)':
+    dependencies:
+      '@hocuspocus/common': 3.4.4
+      '@lifeomic/attempt': 3.1.0
+      lib0: 0.2.117
+      ws: 8.19.0
+      y-protocols: 1.0.7(yjs@13.6.29)
+      yjs: 13.6.29
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   '@hocuspocus/server@3.4.4(y-protocols@1.0.7(yjs@13.6.29))(yjs@13.6.29)':
     dependencies:
       '@hocuspocus/common': 3.4.4
@@ -148,6 +175,8 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  '@lifeomic/attempt@3.1.0': {}
 
   '@types/react-dom@19.2.3(@types/react@19.2.10)':
     dependencies:
