@@ -1,16 +1,38 @@
-const { Server } = require('@hocuspocus/server');
+import { useEffect, useState, useMemo } from 'react'
+import * as Y from 'yjs'
+import { HocuspocusProvider } from '@hocuspocus/provider'
 
-const server = new Server({
-  // 1. Tell it to listen on Render's port
-  port: process.env.PORT ? parseInt(process.env.PORT) : 1234,
-  
-  // 2. Tell it to listen on ALL network interfaces (Required for Render)
-  address: '0.0.0.0',
+export function useSync() {
+  const [isSynced, setIsSynced] = useState(false)
 
-  // Optional: Add a log so you can see it working in Render's dashboard
-  async onListen(data) {
-    console.log(`🚀 Hocuspocus is running on port ${data.port}`);
-  },
-});
+  // 1. Create a stable Yjs Document
+  const ydoc = useMemo(() => new Y.Doc(), [])
 
-server.listen();
+  // 2. Setup the Hocuspocus Provider
+  const provider = useMemo(() => {
+    return new HocuspocusProvider({
+      // Use your LIVE Render URL (not localhost)
+      url: 'wss://zenithboard.onrender.com', 
+      name: 'zenith-canvas-room',
+      document: ydoc,
+      onSynced: () => {
+        setIsSynced(true)
+        console.log('✅ Canvas synced with Render!')
+      },
+      onDisconnect: () => {
+        setIsSynced(false)
+        console.log('❌ Disconnected from server')
+      }
+    })
+  }, [ydoc])
+
+  // 3. Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      provider.destroy()
+      ydoc.destroy()
+    }
+  }, [provider, ydoc])
+
+  return { ydoc, provider, isSynced }
+}

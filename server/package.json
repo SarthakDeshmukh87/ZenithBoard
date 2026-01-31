@@ -1,16 +1,12 @@
 {
-  "name": "server",
+  "name": "zenith-board-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hocuspocus collaboration server",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@hocuspocus/server": "^3.4.3"
   }
