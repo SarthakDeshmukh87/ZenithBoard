@@ -1,11 +1,9 @@
 {
-  "name": "zenith-board-server",
+  "name": "zenith-server",
   "version": "1.0.0",
-  "description": "Hocuspocus collaboration server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@hocuspocus/server": "^3.4.3"
