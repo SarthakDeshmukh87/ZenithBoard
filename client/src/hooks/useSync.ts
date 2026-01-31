@@ -1,4 +1,6 @@
 import { HocuspocusProvider } from '@hocuspocus/provider';
+import * as Y from 'yjs';
+
 // Find your HocuspocusProvider initialization
 const provider = new HocuspocusProvider({
   // CHANGE THIS from localhost to your Render URL
